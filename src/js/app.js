@@ -1,3 +1,4 @@
+import "../css/style.css";
 import { Tree } from "./tree.js";
 
 class App {
@@ -17,8 +18,8 @@ class App {
   };
 
   resizeCanvas = () => {
-    this.stageWidth = document.body.clientWidth;
-    this.stageHeight = document.body.clientHeight;
+    this.stageWidth = document.documentElement.clientWidth;
+    this.stageHeight = document.documentElement.clientHeight;
 
     this.canvas.width = this.stageWidth * this.pixelRatio;
     this.canvas.height = this.stageHeight * this.pixelRatio;
