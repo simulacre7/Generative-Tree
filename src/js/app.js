@@ -4,7 +4,8 @@ class App {
   constructor() {
     this.initCanvas();
     this.resizeCanvas();
-    window.addEventListener("resize", this.resizeCanvas, flase);
+    window.addEventListener("resize", this.resizeCanvas, false);
+
     new Tree(this.ctx, this.stageWidth / 2, this.stageHeight);
   }
 
