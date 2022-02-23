@@ -11,10 +11,10 @@ export class Branch {
   draw = (ctx) => {
     ctx.beginPath();
 
-    ctx.moveTo(this.startX, this.startY); // 선의 시작 위치 지정
-    ctx.lineTo(this.endX, this.endY); // 선의 끝 위치 지정
+    ctx.moveTo(this.startX, this.startY);
+    ctx.lineTo(this.endX, this.endY);
 
-    ctx.lineWidth = this.lineWidth; // 선의 두깨
+    ctx.lineWidth = this.lineWidth;
     ctx.fillStyle = this.color;
     ctx.strokeStyle = this.color;
 
