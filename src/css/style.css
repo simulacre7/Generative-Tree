@@ -107,6 +107,8 @@ section {
 }
 body {
   line-height: 1;
+  display: flex;
+  background-color: rgb(245, 245, 220);
 }
 ol,
 ul {
