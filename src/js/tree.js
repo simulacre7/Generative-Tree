@@ -1,4 +1,5 @@
 import { Branch } from "./branch.js";
+import { getState } from "./store.js";
 
 export class Tree {
   constructor(ctx, posX, posY) {
@@ -6,7 +7,8 @@ export class Tree {
     this.posX = posX;
     this.posY = posY;
     this.branches = [];
-    this.depth = 14;
+    const { depth } = getState();
+    this.depth = depth;
 
     this.cntDepth = 0; // depth별로 그리기 위해 현재 depth 변수 선언
     this.animation = null; // 현재 동작하는 애니메이션

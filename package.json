@@ -27,5 +27,8 @@
     "npm": "Please use yarn",
     "node": ">=16.0.0",
     "yarn": ">=1.0.0"
+  },
+  "dependencies": {
+    "zustand": "^3.7.0"
   }
 }
