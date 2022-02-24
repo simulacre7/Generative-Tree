@@ -6,8 +6,7 @@ class App {
     this.initCanvas();
     this.resizeCanvas();
     window.addEventListener("resize", this.resizeCanvas, false);
-
-    new Tree(this.ctx, this.stageWidth / 2, this.stageHeight);
+    window.addEventListener("click", this.click, false);
   }
 
   initCanvas = () => {
@@ -26,6 +25,11 @@ class App {
     this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+  };
+
+  click = (event) => {
+    const { clientX } = event;
+    new Tree(this.ctx, clientX, this.stageHeight);
   };
 }
 
