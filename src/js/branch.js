@@ -1,18 +1,15 @@
-import { getState } from "./store.js";
-
 export class Branch {
   constructor(startX, startY, endX, endY, lineWidth) {
     this.startX = startX;
     this.startY = startY;
     this.endX = endX;
     this.endY = endY;
+    this.color = "#000000";
+    this.endColor = "#FFB7C5"; //"#0B6623";
     this.lineWidth = lineWidth;
-    const { frame, color, endColor } = getState();
-    this.color = color;
-    this.endColor = endColor;
 
     // For animation
-    this.frame = frame;
+    this.frame = 10;
     this.cntFrame = 0;
     this.gapX = (this.endX - this.startX) / this.frame;
     this.gapY = (this.endY - this.startY) / this.frame;
