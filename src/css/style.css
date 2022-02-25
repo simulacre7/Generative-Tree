@@ -155,7 +155,7 @@ html:hover #tooltip {
 } */
 
 #reset {
-  content: url("../../resource/reset.png");
+  content: url("../../image/reset.png");
   position: fixed;
   top: 0;
   right: 0;
@@ -176,17 +176,17 @@ html:hover #tooltip {
 }
 
 @font-face {
-  font-family: "javacom";
-  src: url("../../resource/Javacom.otf") format("opentype"),
-    url("../../resource/Javacom.ttf") format("truetype"),
-    url("../../resource/Javacom.woff") format("woff"),
-    url("../../resource/Javacom.woff2") format("woff2");
+  font-family: "Javacom";
+  src: url("../../fonts//Javacom.woff2") format("woff2"),
+    url("../../fonts/Javacom.woff") format("woff"),
+    url("../../fonts/Javacom.otf") format("opentype"),
+    url("../../fonts/Javacom.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 html {
-  font-family: javacom;
+  font-family: Javacom;
 }
 
 #greeting {
