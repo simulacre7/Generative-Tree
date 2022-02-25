@@ -7,8 +7,8 @@ class App {
     this.resizeCanvas();
     window.addEventListener("resize", this.resizeCanvas, false);
     window.addEventListener("click", this.click, false);
+    this.initTooltip();
   }
-
   initCanvas = () => {
     this.canvas = document.createElement("canvas");
     document.body.appendChild(this.canvas);
@@ -30,6 +30,14 @@ class App {
   click = (event) => {
     const { clientX } = event;
     new Tree(this.ctx, clientX, this.stageHeight);
+  };
+
+  initTooltip = () => {
+    const tooltip = document.getElementById("tooltip");
+    window.onmousemove = (e) => {
+      tooltip.style.top = e.clientY + "px";
+      tooltip.style.left = e.clientX + "px";
+    };
   };
 }
 

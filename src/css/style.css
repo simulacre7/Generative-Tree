@@ -109,6 +109,7 @@ body {
   line-height: 1;
   display: flex;
   background-color: rgb(245, 245, 220);
+  cursor: pointer;
 }
 ol,
 ul {
@@ -128,4 +129,32 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+html {
+  cursor: url("../../resource/watering-can.png"), auto;
+}
+
+#tooltip {
+  display: none;
+  top: 0;
+  left: 0;
+  /*background: black;
+  color: white;*/
+  padding: 12px;
+  min-width: 36px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+html:hover #tooltip {
+  display: inline-block;
+  position: fixed;
+  overflow: hidden;
+}
+
+#watering {
+  content: url("../../resource/watering-can.png");
+  width: 25%;
+  height: 25%;
 }
