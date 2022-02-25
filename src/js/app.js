@@ -8,6 +8,7 @@ class App {
     window.addEventListener("resize", this.resizeCanvas, false);
     window.addEventListener("click", this.click, false);
     this.initTooltip();
+    this.initReset();
   }
   initCanvas = () => {
     this.canvas = document.createElement("canvas");
@@ -37,6 +38,14 @@ class App {
     window.onmousemove = (e) => {
       tooltip.style.top = e.clientY + "px";
       tooltip.style.left = e.clientX + "px";
+    };
+  };
+
+  initReset = () => {
+    const reset = document.getElementById("reset");
+    reset.onclick = (e) => {
+      this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+      e.stopPropagation();
     };
   };
 }

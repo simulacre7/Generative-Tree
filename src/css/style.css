@@ -155,6 +155,18 @@ html:hover #tooltip {
 
 #watering {
   content: url("../../resource/watering-can.png");
-  width: 25%;
-  height: 25%;
+  /* transform: rotate(-20deg); */
+  width: 100px;
+  height: 50px;
+}
+
+#reset {
+  content: url("../../resource/reset.png");
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  padding: 24px;
+  z-index: 999;
 }
