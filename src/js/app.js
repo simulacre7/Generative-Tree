@@ -50,8 +50,10 @@ class App {
   disableReset = () => {
     const reset = document.getElementById("reset");
     reset.style.animation = "rotation 2s infinite linear";
-    reset.onclick = () => {};
-    reset.style.pointerEvents = "none";
+    reset.onclick = (e) => {
+      e.stopPropagation();
+    };
+    reset.style.cursor = "default";
     reset.style.opacity = "0.5";
   };
 
@@ -62,7 +64,7 @@ class App {
       this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
       e.stopPropagation();
     };
-    reset.style.pointerEvents = "auto";
+    reset.style.cursor = "pointer";
     reset.style.opacity = "1.0";
   };
 
