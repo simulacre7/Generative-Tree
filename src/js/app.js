@@ -1,5 +1,6 @@
 import "../css/style.css";
 import { Tree } from "./tree.js";
+import { subscribe } from "./store.js";
 
 class App {
   constructor() {
@@ -7,8 +8,13 @@ class App {
     this.resizeCanvas();
     window.addEventListener("resize", this.resizeCanvas, false);
     window.addEventListener("click", this.click, false);
-    this.initTooltip();
     this.initReset();
+    subscribe((state) => {
+      state.isOn ? this.disableReset() : this.ableReset();
+    });
+    subscribe((state) => {
+      state.isOn && this.hideGreeting();
+    });
   }
   initCanvas = () => {
     this.canvas = document.createElement("canvas");
@@ -33,20 +39,36 @@ class App {
     new Tree(this.ctx, clientX, this.stageHeight);
   };
 
-  initTooltip = () => {
-    const tooltip = document.getElementById("tooltip");
-    window.onmousemove = (e) => {
-      tooltip.style.top = e.clientY + "px";
-      tooltip.style.left = e.clientX + "px";
-    };
-  };
-
   initReset = () => {
     const reset = document.getElementById("reset");
     reset.onclick = (e) => {
       this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
       e.stopPropagation();
     };
+  };
+
+  disableReset = () => {
+    const reset = document.getElementById("reset");
+    reset.style.animation = "rotation 2s infinite linear";
+    reset.onclick = () => {};
+    reset.style.pointerEvents = "none";
+    reset.style.opacity = "0.5";
+  };
+
+  ableReset = () => {
+    const reset = document.getElementById("reset");
+    reset.style.animationPlayState = "paused";
+    reset.onclick = (e) => {
+      this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+      e.stopPropagation();
+    };
+    reset.style.pointerEvents = "auto";
+    reset.style.opacity = "1.0";
+  };
+
+  hideGreeting = () => {
+    const greeting = document.getElementById("greeting");
+    greeting.style.display = "none";
   };
 }
 

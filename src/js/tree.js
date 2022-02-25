@@ -1,4 +1,5 @@
 import { Branch } from "./branch.js";
+import { setState, getState } from "./store.js";
 
 export class Tree {
   constructor(ctx, posX, posY) {
@@ -45,6 +46,9 @@ export class Tree {
   draw = (ctx) => {
     if (this.cntDepth === this.depth) {
       cancelAnimationFrame(this.animation);
+      getState().isOn && setState({ isOn: false });
+    } else {
+      !getState().isOn && setState({ isOn: true });
     }
 
     for (let i = this.cntDepth; i < this.branches.length; i++) {

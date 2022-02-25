@@ -14,6 +14,10 @@ module.exports = {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: "file-loader",
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: "./index.html" })],

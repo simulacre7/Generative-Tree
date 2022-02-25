@@ -109,7 +109,6 @@ body {
   line-height: 1;
   display: flex;
   background-color: rgb(245, 245, 220);
-  cursor: pointer;
 }
 ol,
 ul {
@@ -131,10 +130,6 @@ table {
   border-spacing: 0;
 }
 
-html {
-  cursor: url("../../resource/watering-can.png"), auto;
-}
-
 #tooltip {
   display: none;
   top: 0;
@@ -153,12 +148,11 @@ html:hover #tooltip {
   overflow: hidden;
 }
 
-#watering {
+/* #watering {
   content: url("../../resource/watering-can.png");
-  /* transform: rotate(-20deg); */
   width: 100px;
   height: 50px;
-}
+} */
 
 #reset {
   content: url("../../resource/reset.png");
@@ -169,4 +163,37 @@ html:hover #tooltip {
   height: 36px;
   padding: 24px;
   z-index: 999;
+  cursor: pointer;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@font-face {
+  font-family: "javacom";
+  src: url("../../resource/Javacom.otf") format("opentype"),
+    url("../../resource/Javacom.ttf") format("truetype"),
+    url("../../resource/Javacom.woff") format("woff"),
+    url("../../resource/Javacom.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+html {
+  font-family: javacom;
+}
+
+#greeting {
+  position: fixed;
+  display: flex;
+  font-size: 96px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

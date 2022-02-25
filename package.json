@@ -17,6 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "css-loader": "^6.6.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.69.1",
@@ -28,5 +29,7 @@
     "node": ">=16.0.0",
     "yarn": ">=1.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "zustand": "^3.7.0"
+  }
 }
