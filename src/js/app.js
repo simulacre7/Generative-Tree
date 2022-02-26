@@ -20,16 +20,16 @@ class App {
     this.canvas = document.createElement("canvas");
     document.body.appendChild(this.canvas);
     this.ctx = this.canvas.getContext("2d");
-    this.pixelRatio = window.devicePixelRatio > 1 ? window.devicePixelRatio : 1; // For retina display
+    //this.pixelRatio = window.devicePixelRatio > 1 ? window.devicePixelRatio : 1; // For retina display
   };
 
   resizeCanvas = () => {
     this.stageWidth = document.documentElement.clientWidth;
     this.stageHeight = document.documentElement.clientHeight;
 
-    this.canvas.width = this.stageWidth * this.pixelRatio;
-    this.canvas.height = this.stageHeight * this.pixelRatio;
-    this.ctx.scale(this.pixelRatio, this.pixelRatio);
+    this.canvas.width = this.stageWidth; //* this.pixelRatio;
+    this.canvas.height = this.stageHeight; //* this.pixelRatio;
+    //this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
   };
